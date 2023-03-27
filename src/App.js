@@ -1,20 +1,24 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import './App.css';
-import Pokemon from './components/Pokemon/Pokemon';
-import { getPokemons } from './services/PokemonService'
+import PokemonList from './components/PokemonList/PokemonList';
+import pokemonsData from './data/pokemons.json'
+// import { getPokemons } from './services/PokemonService'
+
+
 
 function App() {
-  const [pokemonsData, setPokemonsData] = useState([]);
+  // const [pokemonsData, setPokemonsData] = useState([]);
 
-  useEffect(() => {
-    getPokemons()
-      .then((pokemons) => setPokemonsData(pokemons))
-  }, [])
+  // useEffect(() => {
+  //   getPokemons()
+  //     .then(pokemons => setPokemonsData(pokemons)
+  //     )
+  // }, [])
 
 
   return (
     <div className="App">
-      <Pokemon pokemon={pokemonsData} />
+      <PokemonList pokemons={pokemonsData}/>
     </div>
   );
 }
