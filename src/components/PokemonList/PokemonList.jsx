@@ -1,14 +1,17 @@
 import React from 'react'
 import Pokemon from '../Pokemon/Pokemon'
 
-function PokemonList({ pokemons }) {
+function PokemonList({ pokemons, search }) {
   return (
     <div>
-      {pokemons.map( pokemon => (
-        <Pokemon pokemon={pokemon} key={pokemon.id} />
-      ))}
+      {pokemons
+        .filter(pokemon => pokemon.name.english.toLowerCase().includes(search.toLowerCase()))
+        .map(pokemon => (
+          <Pokemon pokemon={pokemon} key={pokemon.id} />
+        ))}
     </div>
   )
 }
+
 
 export default PokemonList

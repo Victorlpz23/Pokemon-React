@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <SearchBar search={search} onSearch={handleSearch}/>
-      <PokemonList pokemons={pokemonsData}/>
+      <PokemonList pokemons={pokemonsData} search={search}/>
     </div>
   );
 }
