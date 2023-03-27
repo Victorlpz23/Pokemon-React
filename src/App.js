@@ -1,4 +1,4 @@
-// import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import './App.css';
 import PokemonList from './components/PokemonList/PokemonList';
 import SearchBar from './components/SearchBar/SearchBar';
@@ -9,6 +9,7 @@ import pokemonsData from './data/pokemons.json'
 
 function App() {
   // const [pokemonsData, setPokemonsData] = useState([]);
+  const [search, setSearch] = useState ('')
 
   // useEffect(() => {
   //   getPokemons()
@@ -16,10 +17,15 @@ function App() {
   //     )
   // }, [])
 
+  const handleSearch = (textInput) => {
+    setSearch(textInput)
+    console.log(textInput)
+  }
+
 
   return (
     <div className="App">
-      <SearchBar />
+      <SearchBar search={search} onSearch={handleSearch}/>
       <PokemonList pokemons={pokemonsData}/>
     </div>
   );
