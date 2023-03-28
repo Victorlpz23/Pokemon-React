@@ -9,7 +9,7 @@ function SearchBar({ search, onSearch }) {
 
   return (
     <div className='m-3'>
-    <label htmlFor="">Search a Pokemon</label>
+    <label className='me-3' htmlFor="">Search a Pokemon</label>
     <input type="text" onChange={handleOnChange} value={search} placeholder='Search...' ></input>
     </div>
   )
