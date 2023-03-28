@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Filters({ onPokemonType, onShowMyPokemons }) {
+function Filters({ onPokemonType, onShowMyPokemons, pokemonsData }) {
 
   const handleChange = (event) => {
     const { value } = event.target
@@ -8,21 +8,22 @@ function Filters({ onPokemonType, onShowMyPokemons }) {
   };
 
 
+  const pokemonsTypes = Array.from(new Set(pokemonsData.flatMap(pokemon => pokemon.type)))
+
+
 
   return (
     <div>
       <div className='m-5'>
         <h5>My Pokemons</h5>
-        <button className='rounded-pill' onClick={onShowMyPokemons}>
+        <button className='btn' onClick={onShowMyPokemons}>
           <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG" style={{ width: 30 }} alt="pokeball" />
         </button>
       </div>
       <label htmlFor="">Types</label>
       <select id="" className="form-select" placeholder='Types' onChange={handleChange}>
         <option>All</option>
-        <option>Grass</option>
-        <option>Fire</option>
-        <option>Water</option>
+        {pokemonsTypes.map( x => <option key={x}>{x}</option>) }
       </select>
     </div>
   )
