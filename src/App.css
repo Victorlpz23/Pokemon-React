@@ -1,4 +1,10 @@
 .App {
   text-align: center;
+  background-color:aqua
+}
+
+.card {
+  background-color: bisque;
+  width: 18rem;
 }
 
