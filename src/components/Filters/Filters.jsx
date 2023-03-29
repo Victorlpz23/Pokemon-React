@@ -13,14 +13,14 @@ function Filters({ onPokemonType, onShowMyPokemons, pokemonsData }) {
 
 
   return (
-    <div>
+    <div className='m-3'>
       <div className='m-5'>
         <h5>My Pokemons</h5>
         <button className='btn' onClick={onShowMyPokemons}>
           <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Pokeball.PNG" style={{ width: 30 }} alt="pokeball" />
         </button>
       </div>
-      <label htmlFor="">Types</label>
+      <label className='mb-2 fw-bold'>Types</label>
       <select id="" className="form-select" placeholder='Types' onChange={handleChange}>
         <option>All</option>
         {pokemonsTypes.map( x => <option key={x}>{x}</option>) }
